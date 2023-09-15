@@ -1,0 +1,12 @@
+apiVersion: monitoring.googleapis.com/v1
+kind: PodMonitoring
+metadata:
+  name: whereami-backend
+spec:
+  selector:
+    matchLabels:
+      app: whereami-backend
+  endpoints:
+  - port: 15020
+    path: "/stats/prometheus"
+    interval: 30s

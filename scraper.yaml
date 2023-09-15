@@ -1,0 +1,13 @@
+apiVersion: monitoring.googleapis.com/v1
+kind: PodMonitoring
+metadata:
+  name: whereami-grpc-frontend
+  namespace: whereami-grpc-frontend
+spec:
+  selector:
+    matchLabels:
+      app: whereami-grpc-frontend
+  endpoints:
+  - port: 15020
+    path: "/stats/prometheus"
+    interval: 30s
